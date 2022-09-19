@@ -2,6 +2,13 @@ version: 0.2
 
 
 phases:
+  install:
+    commands:
+      - sudo su
+      - yum install docker
+      - systemctl start docker
+      - systemctl enable docker
+      - systemctl restart docker
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
